@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;            
+        }
+        .container {
+            background-color: #ffee58;
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: -15px -15px 35px rgba(220, 28, 28, 0.1);
+            width: 300px;
+            padding-right: 10%;
+            padding-left: 10%;
+           
+        }
+        .container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .container input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007dff;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: rgb(153, 0, 0);
+        }
+        img{box-shadow: 0q;
+        }
+    </style>
+</head>
+<body>
+    <img src="/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2f-w6_-Fq-1CBJZqLdz7XD2pueOnTSdRoUVD9F0hPx6bKb7NpPsDhHwve7VBBhR7NQ.webp" alt="" width="850px" height="700px">
+    <div class="container">
+        <h2>Register</h2>
+        <!-- <form action="submit_registration.php" method="POST"> -->
+            <label for="username">Username/Mobile Number</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Create Password</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="password">Confirm Password</label>
+            <input type="password" id="password1" name="password" required>
+
+            <a href="form2.html"><button  class="submit">Submit Now</button></a> 
+        </form>
+    </div>
+</body>
+</html>

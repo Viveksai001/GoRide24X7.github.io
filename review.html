@@ -1,0 +1,76 @@
+<div class="container">
+    <h2>Leave a Review</h2>
+    <div class="stars" id="stars">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+    </div>
+    <div id="rating">Your Rating: <span id="rating-value">0</span></div>
+    <form id="review-form">
+        <textarea id="review-text" rows="5" placeholder="Write your review here"></textarea>
+        <div class="submit-container">
+            <input type="submit" value="Submit Review">
+        </div>
+    </form>
+</div>
+<div class="confirm-booking">
+    <button onclick="location.href='payment.html'">Confirm Booking</button>
+</div>
+
+<script>
+    const stars = document.querySelectorAll('.star');
+    const ratingValue = document.getElementById('rating-value');
+    const reviewText = document.getElementById('review-text');
+    const reviewForm = document.getElementById('review-form');
+
+    let currentRating = 0;
+
+    stars.forEach(star => {
+        star.addEventListener('mouseover', hoverStar);
+        star.addEventListener('click', setRating);
+    });
+
+    reviewForm.addEventListener('submit', submitReview);
+
+    function hoverStar(event) {
+        const hoverValue = parseInt(event.target.getAttribute('data-value'));
+        highlightStars(hoverValue);
+    }
+
+    function setRating(event) {
+        const selectedValue = parseInt(event.target.getAttribute('data-value'));
+        currentRating = selectedValue;
+        highlightStars(selectedValue);
+        ratingValue.textContent = selectedValue;
+    }
+
+    function highlightStars(value) {
+        stars.forEach(star => {
+            const starValue = parseInt(star.getAttribute('data-value'));
+            if (starValue <= value) {
+                star.classList.add('active');
+            } else {
+                star.classList.remove('active');
+            }
+        });
+    }
+
+    function submitReview(event) {
+        event.preventDefault();
+        const review = reviewText.value.trim();
+        if (currentRating === 0) {
+            alert('Please select a rating.');
+            return;
+        }
+        // Here you can submit the review with the rating and text
+        console.log(`Rating: ${currentRating}, Review: ${review}`);
+        // Reset form
+        currentRating = 0;
+        highlightStars(0);
+        ratingValue.textContent = '0';
+        reviewText.value = '';
+        alert('Thank you for your review!');
+    }
+</script>

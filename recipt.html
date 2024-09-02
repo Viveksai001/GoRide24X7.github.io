@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order recipt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #faa5a5;
+        background-image: url("pngtree-fashion-atmosphere-car-modification-auto-repair-poster-design-image_197278.jpg");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .confirmation-container {
+        background-color: #d9990e;
+        background-image: url("/pngtree-professional-car-maintenance-and-repair-poster-picture-image_1092882.jpg");
+        border-image-outset: 0cqi;
+        border:2px solid #0c0c0c;
+        padding: 20px;
+        box-shadow: -9px -6px 15px rgba(210, 180, 8, 0.1);
+        width: 80%;
+        max-width: 600px;
+        text-align: center;
+        
+    }
+
+    h1 {
+        color: #0e0e0d;
+        font-weight:bold;
+        text-shadow:tomato;
+        border: 2px solid black ;
+        background-color: rgb(239, 13, 84);
+        width:400px;
+        margin-left: 100px;
+        border-radius: 75px;
+        box-shadow: -3px -3px 15px rgb(97, 5, 121);
+
+    }
+    .order-item {
+        border-bottom: 1px solid #dddddd;
+        padding: 10px 0;
+        font-weight:bolder;
+    }
+
+    .order-item:last-child {
+        border-bottom: none;
+        font-weight:bolder;
+    }
+
+    button {
+        background-color: #e3163c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 75px;
+        box-shadow: -3px -3px 15px rgb(97, 5, 121);
+    }
+
+    button:hover {
+        background-color: #09d863;
+    }
+    text{
+        font-weight:bold;
+    }
+</style>
+
+<script>
+    // Sample order data
+    const orderData = {
+        orderId: '123456789',
+        orderDate: '2024-05-22',
+        customerName: 'John Doe',
+        items: [
+            { name: 'Item 1', quantity: 2, price: 300 },
+            { name: 'Item 2', quantity: 1, price: 500 },
+            { name: 'Item 3', quantity: 3, price: 700 }
+        ],
+        totalAmount: 1500
+        
+    };
+
+    // Function to display order details
+    function displayOrderDetails() {
+        const orderDetailsDiv = document.getElementById('order-details');
+
+        const orderInfo = `
+        <p>Order ID: ${orderData.orderId}</p>
+        <p>Order Date: ${orderData.orderDate}</p>
+        <p>Customer Name: ${orderData.customerName}</p>
+        <div>
+            ${orderData.items.map(item => `
+                <div class="order-item">
+                    <p>${item.name}</p>
+                    <p>Quantity: ${item.quantity}</p>
+                    <p>Price: RS ${item.price.toFixed(2)}</p>
+                </div>
+            `).join('')}
+        </div>
+        <h2>Total Amount: Rs ${orderData.totalAmount.toFixed(2)}</h2>
+    `;
+
+
+        orderDetailsDiv.innerHTML = orderInfo;
+    }
+
+    // Function to print the order
+    function printOrder() {
+        window.print();
+    }
+
+    // Display the order details when the page loads
+    window.onload = displayOrderDetails;
+
+</script>
+
+<body>
+    <div class="confirmation-container">
+        <h1>Order Confirmation</h1>
+        <div id="order-details">
+            <!-- Order details will be inserted here by JavaScript -->
+        </div>
+        <button onclick="printOrder()">Print Order</button>
+        <a
+            href="https://www.google.com/maps/dir/Shop+No-GF-131A,+GoMechanic+-+Car+Battery+Shop,+Noida,+MSX+Mall,+Noida,+Uttar+Pradesh+201310/28.4557312,77.5028736/@28.4549686,77.5012951,17z/data=!3m1!4b1!4m10!4m9!1m5!1m1!1s0x390cc1c02a545bdf:0x5a28485ff33092fb!2m2!1d77.5046101!2d28.4552521!1m1!4e1!3e9?entry=ttu"><button>Get Current Status</button></a>
+    <a href="/index.html"><button>Home</button></a>
+</div>
+    <!-- <script src="script.js"></script>
+    <a href="recipt.html"><button>Click Here To Get Payment Receipt</button></a> -->
+</body>
+
+</html>
